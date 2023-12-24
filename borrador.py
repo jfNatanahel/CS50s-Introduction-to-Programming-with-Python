@@ -1,3 +1,4 @@
-palabra="hola.quehaces".strip("")
-#palabra.strip(".q")
-print(palabra.split(".",1))
+nombre_archivo=str(input("ingresar "))
+separacion=nombre_archivo.split(".")
+tamaño_lista=len(separacion)
+print(tamaño_lista)

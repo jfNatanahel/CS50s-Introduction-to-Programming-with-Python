@@ -15,23 +15,29 @@ genera application/octet-streamen su lugar, que es un valor predeterminado comú
 """
 
 #Solicitar al usuario el nombre de un archivo.
-nombre_archivo=str(input("Ingresar el nombre del archivo son su sufijo:  ")).lower()
+nombre_archivo=str(input("Ingresar el nombre del archivo son su sufijo:  ")).lower().strip()
+
 #Separar en dos para obtener los resultados.
 separacion=nombre_archivo.split(".")
+tamaño_lista=len(separacion)
 
-if separacion[1] == "gif":
-    print("image/gif")
-elif separacion[1]=="jpg":
-    print("image/jpeg")
-elif separacion[1]=="jpeg":
-    print("image/jpeg")
-elif separacion[1]=="png":
-    print("image/png")
-elif separacion[1]=="pdf":
-    print("application/pdf")
-elif separacion[1]=="txt":
-    print("text/plain")
-elif separacion[1]=="zip":
-    print("application/zip")
-else:
+#Si el tamaño de la lista es 1 quiere decir que no puso el prefijo.
+if tamaño_lista==1:
     print("application/octet-streamen")
+
+#Si no imprimimos dependiendo del resultado.
+else:
+    if separacion[1] == "gif":
+        print("image/gif")
+    elif separacion[1]=="jpeg" or separacion[1]=="jpg":
+        print("image/jpeg")
+    elif separacion[1]=="png":
+        print("image/png")
+    elif separacion[1]=="pdf":
+        print("application/pdf")
+    elif separacion[1]=="txt":
+        print("text/plain")
+    elif separacion[1]=="zip":
+        print("application/zip")
+
+    
