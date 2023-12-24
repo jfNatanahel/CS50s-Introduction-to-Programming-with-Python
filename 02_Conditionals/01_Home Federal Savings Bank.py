@@ -10,11 +10,12 @@ saludo=str(input("Ingresar saludo: ")).lower()
 if saludo =="hola":
     print("$0")
 
-#Si el saludo es distinto de todos mostrar $100
+#Si el saludo comienza con una "h" distinto de hola muestra $20
+
 elif saludo.startswith("h"):
     print("$20")
 
-#Si el saludo comienza con una "h" distinto de hola muestra $20
+#Si el saludo es distinto de todos mostrar $100
 else: 
     print("$100")
 
