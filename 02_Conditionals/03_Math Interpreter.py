@@ -13,7 +13,27 @@ entonces z no lo será 0.
 Tenga en cuenta que, así como pythonél mismo es un intérprete de Python, ¡también lo será usted interpreter.pyun intérprete de matemáticas!
 """
 expresion_matematica=str(input("Ingresar una expresion Aritmetica: "))
+
+#Separar cada uno con split y guardar esos valores en sus respectivas variables.
 x,y,z=expresion_matematica.split(" ")
-print(x)
-print(y)
-print(z)
+
+#CONVERTIR EN FLOTANTE LOS NUMEROS STRINGS
+x=float(x)
+z=float(z)
+
+#CONDICIONES
+if y=="+":
+    resultado=x+z
+elif y=="-":
+    resultado=x-z
+elif y=="*":
+    resultado=x*z
+elif y=="/":
+    if z==0:
+        print("MATCH ERROR")
+    resultado=x/z        
+else:
+    print("Operacion incorrecta")
+
+#MOSTRAR LOS RESULTADOS CON 1 DECIMAL!!
+print(f"Resultado de su operacion es: {round(resultado,1)}")
