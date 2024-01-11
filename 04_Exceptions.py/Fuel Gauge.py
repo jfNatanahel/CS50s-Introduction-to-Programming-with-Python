@@ -7,18 +7,25 @@ ticamente vacio. Y si queda 99% o mas, la salida F indica que el tanque esta ese
 Si X o Y no es un numero entero y X es mayor que Y o Y es 0, pregunte al usuario nuevamente. Debo detectar
 excepciones como ValueError o ZeroDivisionError"""
 
-#Ciclo True
-while True:
-    fraccion=int(input("Fraccion: X/Y? "))
-    x,y=fraccion.split("/")
-    x,y=x(int), y(int)
+def principal_nafta():
+    fraccion=(secundaria_calculos)
+
+def secundaria_calculos(calculos):
+    calculos=int(input("Fraccion(X/Y): "))
+    x,y=calculos.split("/")
     porcentaje=x/y.round()*100
-    try:
-    except (ValueError,ZeroDivisionError):
-        print("ERROR")
-    else:
-        break
-print(porcentaje,"%")
+    while True:
+        try:
+        except ValueError:
+            print("Error")
+        except ZeroDivisionError:
+            print("Error")
+        else:
+            break
+    return porcentaje
+
+main()
+
 #Solicitar al usuario una fraccion:
 #Generar un porcentaje redondeado al entero mas cercano.
 #Si queda 1% -> E
