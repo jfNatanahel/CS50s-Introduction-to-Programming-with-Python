@@ -8,13 +8,16 @@ Si X o Y no es un numero entero y X es mayor que Y o Y es 0, pregunte al usuario
 excepciones como ValueError o ZeroDivisionError"""
 
 def principal_nafta():
-    fraccion=(secundaria_calculos)
+    fraccion=secundaria_calculos()
     print(fraccion)
 
-def secundaria_calculos(calculos):
+def secundaria_calculos():
     while True:
         try:
-            calculos=int(input("Fraccion(X/Y): "))
+#Error: calculos=int(input("Fraccion(X/Y): "))
+            calculos=input("Fraccion(X/Y): ")
+
+#split los convierte en una lista y mapea los resultados.
             x,y=map(int,calculos.split("/"))
         
         #Sintaxis incorrecta: porcentaje=x/y.round()*100
