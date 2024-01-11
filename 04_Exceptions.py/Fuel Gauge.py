@@ -9,13 +9,28 @@ excepciones como ValueError o ZeroDivisionError"""
 
 def principal_nafta():
     fraccion=(secundaria_calculos)
+    print(fraccion)
 
 def secundaria_calculos(calculos):
-    calculos=int(input("Fraccion(X/Y): "))
-    x,y=calculos.split("/")
-    porcentaje=x/y.round()*100
     while True:
         try:
+            calculos=int(input("Fraccion(X/Y): "))
+            x,y=map(int,calculos.split("/"))
+        
+        #Sintaxis incorrecta: porcentaje=x/y.round()*100
+            porcentaje=round((x/y)*100)
+
+        #Condiones:
+            if y==0 or x>y:
+                True #siga corriendo el codigo pero no saldra del bucle.
+            elif porcentaje<=1:
+                return "E - el tanque esta practicamente vacio"
+            elif porcentaje>=99:
+                return "F- el tanque esta lleno"
+            else:
+                return f"{porcentaje}%"
+
+#Excepciones errores del usuario.
         except ValueError:
             print("Error")
         except ZeroDivisionError:
@@ -24,7 +39,7 @@ def secundaria_calculos(calculos):
             break
     return porcentaje
 
-main()
+principal_nafta()
 
 #Solicitar al usuario una fraccion:
 #Generar un porcentaje redondeado al entero mas cercano.
