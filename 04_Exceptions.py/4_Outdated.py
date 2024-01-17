@@ -12,7 +12,35 @@ cualquiera de los valores a continuación list:
 Luego envíe esa misma fecha en YYYY-MM-DD formato. Si la entrada del usuario no es una fecha válida en nin-
 guno de los formatos, pregunte al usuario nuevamente. Supongamos que cada mes no tiene más de 31 días; no 
 es necesario validar si un mes tiene 28, 29, 30 o 31 días."""
-mes=[
+
+#Pedir usuario fecha en formato mes-dia-año . Donde el mes debe corresponder alguno de la list.
+#Mostrar en formato YYYY-MM-DD (completar con ceros)
+def main():
+    entrada_usuario=algoritmo()
+
+def algoritmo():
+    while True:
+        try:
+            fecha=input("ingresar fecha en formato: mes/dia/año ")
+            if "/" in fecha:
+                mes,dia,año=fecha.split("/")
+            else:
+                mes,dia,año=fecha.split(" ")
+
+            # Verificar si el mes está en la lista usando index
+            mes_index = meses.index(mes)
+
+        #el mes no se encuentra en la lista.
+        except ValueError:
+            print("Error: Mes no válido. Intente nuevamente.")
+
+            # Si llegamos aquí, la entrada fue válida, podemos salir del bucle
+            #break
+
+
+    return print("hola")
+main()
+meses=[
     "January",
     "February",
     "March",
@@ -26,9 +54,3 @@ mes=[
     "November",
     "December"
 ]
-#Pedir usuario fecha en formato mes-dia-año . Donde el mes debe corresponder alguno de la list.
-#Mostrar en formato YYYY-MM-DD (completar con ceros)
-while True:
-    fecha=input("ingresar fecha en formato: mes/dia/año ")
-#Errores
-    mes,dia,año=fecha.split()
