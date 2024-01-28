@@ -15,42 +15,28 @@ es necesario validar si un mes tiene 28, 29, 30 o 31 días."""
 
 #Pedir usuario fecha en formato mes-dia-año . Donde el mes debe corresponder alguno de la list.
 #Mostrar en formato YYYY-MM-DD (completar con ceros)
-def main():
-    entrada_usuario=algoritmo()
-
-def algoritmo():
-    while True:
-        try:
-            fecha=input("ingresar fecha en formato: mes/dia/año ")
-            if "/" in fecha:
-                mes,dia,año=fecha.split("/")
-            else:
-                mes,dia,año=fecha.split(" ")
-
-            # Verificar si el mes está en la lista usando index
-            mes_index = meses.index(mes)
-
-        #el mes no se encuentra en la lista.
-        except ValueError:
-            print("Error: Mes no válido. Intente nuevamente.")
-
-            # Si llegamos aquí, la entrada fue válida, podemos salir del bucle
-            #break
-
-
-    return print("hola")
-main()
 meses=[
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November",
     "December"
 ]
+while True:
+    fecha = input("Ingresar fecha: ").title()
+    if "/" in fecha:
+        mes, dia, año = fecha.split("/")
+    else:
+        mes, dia, año = fecha.split(" ")
+        for i, nombre_mes in enumerate(meses, start=1):
+            if nombre_mes == mes:
+                numero_mes = str(i).zfill(2)
+                dia_str = str(dia).zfill(2)
+                print(f"{año}-{numero_mes}-{dia_str}")
+                break
+        break
+          
+
+
+
+    
+   
+
